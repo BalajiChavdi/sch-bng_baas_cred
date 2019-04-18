@@ -16,14 +16,14 @@
       tags: access
 
     - copy:
-        src: /usr/lib/python2.7/site-packages/ansible/modules/custom_modules/gen_pass.py
-        dest: /root/baas/gen_pass.py
+        src: /usr/lib/python2.7/site-packages/ansible/modules/custom_modules/gen_pass-sch.py
+        dest: /root/baas/gen_pass-sch.py
         backup: yes
       delegate_to: 127.0.0.1
       tags: access
 
     - name: Creating prod_users password file
-      command: /usr/bin/python /root/baas/gen_pass.py
+      command: /usr/bin/python /root/baas/gen_pass-sch.py
       delegate_to: 127.0.0.1
       tags: access
 
