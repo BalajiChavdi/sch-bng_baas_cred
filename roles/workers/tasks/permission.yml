@@ -84,11 +84,11 @@
   run_once: true
 
 - name: copy over kube configs
-  shell: "scp -r root@bnecc001d:/root/.kube /root"
+  shell: "scp -r root@bnecc005d:/root/.kube /root"
   delegate_to: 127.0.0.1
   async: 240
   poll: 10
-  when: (kube_details.stat.exists and kube_details.stat.isdir == false) and (inventory_hostname == "bnecc001d")
+  when: (kube_details.stat.exists and kube_details.stat.isdir == false) and (inventory_hostname == "bnecc005d")
   run_once: true
 
 - name: Run kube commands
